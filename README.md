@@ -6,8 +6,8 @@
 
 | Name | GitHub | Main responsibilities |
 |------|--------|-----------------------|
-| Simon Jerina | @simonjerina | … |
-| Matej Suhadolc | @JRsuhi | … |
+| Simon Jerina | @simonjerina | Frontend, Testing, Ai integracija |
+| Matej Suhadolc | @JRsuhi | Backend, Podatkovna baza, Frontend |
 
 <!-- Lab repository: one row. Project repository: both team members. -->
 
