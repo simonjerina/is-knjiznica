@@ -1,13 +1,13 @@
-# Project name
+# Knjigomat
 
-> One-sentence description of what your system does and for whom.
+> Informacijski sistem za upravljanje knjižnice: člani prek spleta ali telefona iščejo po katalogu ter si izposojajo, rezervirajo in podaljšujejo knjige, knjižničarji pa upravljajo zbirko in izposojo.
 
 ## Authors
 
 | Name | GitHub | Main responsibilities |
 |------|--------|-----------------------|
-| TODO-AUTHOR | @… | … |
-| TODO-AUTHOR | @… | … |
+| Simon Jerina | @simonjerina | … |
+| Matej Suhadolc | @JRsuhi | … |
 
 <!-- Lab repository: one row. Project repository: both team members. -->
 
