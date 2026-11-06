@@ -1,6 +1,6 @@
-# Knjigomat
+# Shelfie
 
-> Informacijski sistem za upravljanje knjižnice: člani prek spleta ali telefona iščejo po katalogu ter si izposojajo, rezervirajo in podaljšujejo knjige, knjižničarji pa upravljajo zbirko in izposojo.
+> Informacijski sistem za manjše knjižnice v študentskih domovih, društvih in klubih: člani prek spleta ali telefona iščejo po katalogu ter si izposojajo, rezervirajo in podaljšujejo knjige, skrbniki pa vodijo zbirko in izposojo.
 
 ## Authors
 
