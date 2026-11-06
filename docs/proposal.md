@@ -1,85 +1,85 @@
-# Project Proposal — Knjigomat
+# Predlog projekta — Knjigomat
 
-**Knjigomat** is a library management system for a small public, school or faculty library. Members search the catalog, borrow and reserve books, and manage their loans from the web or a phone. Librarians manage the collection and the circulation desk.
+**Knjigomat** je informacijski sistem za upravljanje manjše knjižnice (splošne, šolske ali fakultetne). Člani v njem iščejo po katalogu, si izposojajo in rezervirajo knjige ter upravljajo svoje izposoje prek spleta ali telefona. Knjižničarji v sistemu vodijo knjižnično zbirko in izposojo.
 
 ## Problem
-Many smaller libraries (school, faculty, municipal branch) still run circulation on spreadsheets, paper cards or outdated desktop software. As a result:
+Številne manjše knjižnice (šolske, fakultetne, krajevne enote) izposojo še vedno vodijo v preglednicah, na papirnatih karticah ali v zastareli namizni programski opremi. Posledice:
 
-- **Members** can't easily check whether a book is actually on the shelf, don't know when a reserved book becomes available, and forget due dates, which leads to late fees and frustration.
-- **Librarians** spend a lot of time on routine work: checking availability, processing renewals by hand, chasing overdue books and working out fees.
-- **The library** has no clear overview of what is borrowed, overdue or in demand, so buying decisions are guesswork.
+- **Člani** ne morejo enostavno preveriti, ali je knjiga res na polici, ne vedo, kdaj bo rezervirana knjiga na voljo, in pozabljajo na roke vračila, kar vodi v zamudnine in slabo voljo.
+- **Knjižničarji** veliko časa porabijo za rutinsko delo: preverjanje razpoložljivosti, ročno podaljševanje izposoj, opominjanje zamudnikov in računanje zamudnin.
+- **Knjižnica** nima jasnega pregleda nad tem, kaj je izposojeno, kaj zamuja in po čem je povpraševanje, zato se o nabavi odloča na pamet.
 
-Knjigomat puts the catalog, loans, a fair reservation queue and automatic due-date and fee handling into a single system. Members can use it from a phone right at the shelf.
+Knjigomat združi katalog, izposojo, pravično čakalno vrsto za rezervacije ter samodejno upravljanje rokov in zamudnin v enem sistemu. Člani ga lahko uporabljajo s telefonom kar pred knjižno polico.
 
-## Users and roles
-| Role | Description | What they can do |
-|------|-------------|------------------|
-| Member | Registered library user (student, resident…) | Search the catalog, see availability, reserve books, view and renew own loans, see own fees, use the mobile app and the AI assistant |
-| Librarian | Library staff at the circulation desk | Manage books and physical copies, check copies out and in, manage reservations, waive or settle fees, view overdue reports |
-| Admin | System administrator | Manage user accounts and roles, configure loan rules (loan length, max loans, max renewals, daily fee) |
+## Uporabniki in vloge
+| Vloga | Opis | Kaj lahko počne |
+|-------|------|-----------------|
+| Član | Registriran uporabnik knjižnice (študent, občan …) | Išče po katalogu, vidi razpoložljivost, rezervira knjige, pregleduje in podaljšuje svoje izposoje, vidi svoje zamudnine, uporablja mobilno aplikacijo in AI asistenta |
+| Knjižničar | Zaposleni na izposojevalnem pultu | Upravlja knjige in fizične izvode, izposoja in sprejema vrnjene izvode, upravlja rezervacije, odpisuje ali poravna zamudnine, pregleduje poročila o zamudah |
+| Administrator | Skrbnik sistema | Upravlja uporabniške račune in vloge, nastavlja pravila izposoje (trajanje izposoje, največje število izposoj, največje število podaljšanj, dnevna zamudnina) |
 
-Authorization is enforced on the server by role **and** ownership: a member can only see and change their own loans, reservations and fees.
+Avtorizacija se izvaja na strežniku glede na vlogo **in** lastništvo: član lahko vidi in spreminja samo svoje izposoje, rezervacije in zamudnine.
 
-## User stories
+## Uporabniške zgodbe
 
-Format: *As a <role>, I want <goal>, so that <benefit>.* Priority: **M**ust / **S**hould / **C**ould / **W**on't.
+Oblika: *Kot <vloga> želim <cilj>, da <korist>.* Prioriteta (MoSCoW): **M** — must (nujno), **S** — should (zaželeno), **C** — could (lahko), **W** — won't (ne v tej različici).
 
-| # | Story | Priority | Milestone | Issue |
-|---|-------|----------|-----------|-------|
-| 1 | As a **member**, I want to search the catalog by title, author, ISBN or genre and see how many copies are available, so that I know whether I can borrow a book right now. | M | midterm | #… |
-| 2 | As a **librarian**, I want to add, edit and remove books and their physical copies, so that the catalog matches what is on the shelves. | M | midterm | #… |
-| 3 | As a **librarian**, I want to check a copy out to a member and check it back in, so that every loan is recorded with a due date. | M | midterm | #… |
-| 4 | As a **member**, I want to see my current loans and their due dates, so that I return books on time. | M | midterm | #… |
-| 5 | As a **member**, I want to reserve a book that is currently unavailable, so that I get it as soon as a copy is returned. | M | midterm | #… |
-| 6 | As a **member**, I want to renew a loan online, so that I can keep a book longer without visiting the library. | S | midterm | #… |
-| 7 | As a **librarian**, I want to see a list of overdue loans with the fees owed, so that I can follow up with members. | S | midterm | #… |
-| 8 | As an **admin**, I want to manage user accounts and roles and set loan rules, so that the library can adapt the system to its policies. | S | midterm | #… |
-| 9 | As a **member**, I want to scan a book's ISBN barcode with my phone, so that I instantly see its availability and can reserve it. | M | final | #… |
-| 10 | As a **member**, I want to describe what I'm looking for in plain language (e.g. "something about graphs for beginners"), so that I find relevant books without knowing exact titles. | M | final | #… |
-| 11 | As a **member**, I want an AI assistant that can find a book, reserve it and renew my loans after I confirm, so that I can handle my library tasks in one conversation. | M | final | #… |
-| 12 | As a **member**, I want to get a notification when my reserved book is ready or a loan is about to expire, so that I don't miss pickups or due dates. | C | final | #… |
-| 13 | As a **member**, I want to pay fees online, so that I don't have to pay at the desk. | W | — | — |
+| # | Zgodba | Prioriteta | Mejnik | Issue |
+|---|--------|------------|--------|-------|
+| 1 | Kot **član** želim iskati po katalogu po naslovu, avtorju, ISBN ali žanru in videti, koliko izvodov je na voljo, da vem, ali si knjigo lahko izposodim takoj. | M | vmesni zagovor | #… |
+| 2 | Kot **knjižničar** želim dodajati, urejati in odstranjevati knjige ter njihove fizične izvode, da se katalog ujema s stanjem na policah. | M | vmesni zagovor | #… |
+| 3 | Kot **knjižničar** želim izvod izposoditi članu in ga ob vrnitvi sprejeti nazaj, da je vsaka izposoja zabeležena z rokom vračila. | M | vmesni zagovor | #… |
+| 4 | Kot **član** želim videti svoje trenutne izposoje in njihove roke vračila, da knjige vrnem pravočasno. | M | vmesni zagovor | #… |
+| 5 | Kot **član** želim rezervirati knjigo, ki trenutno ni na voljo, da jo dobim takoj, ko je kakšen izvod vrnjen. | M | vmesni zagovor | #… |
+| 6 | Kot **član** želim izposojo podaljšati prek spleta, da lahko knjigo obdržim dlje brez obiska knjižnice. | S | vmesni zagovor | #… |
+| 7 | Kot **knjižničar** želim videti seznam izposoj z zamudo in dolgovanimi zamudninami, da lahko opomnim člane. | S | vmesni zagovor | #… |
+| 8 | Kot **administrator** želim upravljati uporabniške račune in vloge ter nastavljati pravila izposoje, da lahko knjižnica sistem prilagodi svojim pravilom. | S | vmesni zagovor | #… |
+| 9 | Kot **član** želim s telefonom skenirati črtno kodo ISBN na knjigi, da takoj vidim njeno razpoložljivost in jo lahko rezerviram. | M | končni zagovor | #… |
+| 10 | Kot **član** želim z naravnim jezikom opisati, kaj iščem (npr. »nekaj o grafih za začetnike«), da najdem ustrezne knjige, tudi če ne poznam točnih naslovov. | M | končni zagovor | #… |
+| 11 | Kot **član** želim AI asistenta, ki po moji potrditvi poišče knjigo, jo rezervira in podaljša moje izposoje, da lahko vse opravim v enem pogovoru. | M | končni zagovor | #… |
+| 12 | Kot **član** želim prejeti obvestilo, ko je moja rezervirana knjiga pripravljena ali ko se izteka rok izposoje, da ne zamudim prevzema ali roka vračila. | C | končni zagovor | #… |
+| 13 | Kot **član** želim zamudnine plačati prek spleta, da mi ni treba plačevati na pultu. | W | — | — |
 
-### Acceptance criteria
+### Kriteriji sprejemljivosti
 
-**Story 1 — catalog search**
-- **Given** the catalog contains "Introduction to Algorithms" with 3 copies, 1 of them on loan
-- **When** a member searches for "algorithms"
-- **Then** the book appears in the results showing *2 of 3 available*
+**Zgodba 1 — iskanje po katalogu**
+- **Če** katalog vsebuje knjigo »Uvod v algoritme« s 3 izvodi, od katerih je 1 izposojen,
+- **ko** član išče »algoritmi«,
+- **potem** se knjiga prikaže med rezultati z oznako *na voljo 2 od 3*.
 
-**Story 3 — check-out and check-in**
-- **Given** a member with fewer than the maximum allowed loans and no unpaid fees above the limit
-- **When** a librarian checks out an available copy to them
-- **Then** a loan is created with a due date of *today + loan length*, and the copy is marked as on loan
-- **And when** the copy is checked in after the due date, **then** a late fee of *days late × daily fee* is recorded on the member's account
+**Zgodba 3 — izposoja in vračilo**
+- **Če** ima član manj kot največje dovoljeno število izposoj in nima neporavnanih zamudnin nad dovoljeno mejo,
+- **ko** mu knjižničar izposodi razpoložljiv izvod,
+- **potem** se ustvari izposoja z rokom vračila *danes + trajanje izposoje*, izvod pa se označi kot izposojen.
+- **Ko** je izvod vrnjen po roku, **potem** se članu zaračuna zamudnina v višini *število dni zamude × dnevna zamudnina*.
 
-**Story 5 — reservation queue**
-- **Given** all copies of a book are on loan
-- **When** a member reserves it
-- **Then** they are added to the end of the book's reservation queue and see their position
-- **And when** a copy is returned, **then** it is held for the first member in the queue for 3 days, and nobody else can borrow it during that time
+**Zgodba 5 — čakalna vrsta za rezervacije**
+- **Če** so vsi izvodi knjige izposojeni,
+- **ko** jo član rezervira,
+- **potem** je dodan na konec čakalne vrste za to knjigo in vidi svoje mesto v vrsti.
+- **Ko** je izvod vrnjen, **potem** se 3 dni hrani za prvega člana v vrsti in si ga v tem času nihče drug ne more izposoditi.
 
-**Story 6 — renewal**
-- **Given** a member has a loan that has been renewed fewer than the maximum number of times
-- **When** they renew it and **no other member is waiting** in the reservation queue for that book
-- **Then** the due date is extended by one loan period
-- **Otherwise** the renewal is rejected with a clear reason (limit reached / book reserved by someone else / loan overdue)
+**Zgodba 6 — podaljšanje**
+- **Če** je bila članova izposoja podaljšana manjkrat, kot je največje dovoljeno število podaljšanj,
+- **ko** jo član podaljša **in** na to knjigo ne čaka noben drug član,
+- **potem** se rok vračila podaljša za eno obdobje izposoje.
+- **Sicer** se podaljšanje zavrne z jasnim razlogom (dosežena omejitev / knjigo je rezerviral nekdo drug / izposoja je že v zamudi).
 
-**Story 11 — AI agent**
-- **Given** a logged-in member asks: "Find me an available book about databases, reserve it and extend my current loans"
-- **When** the agent has looked up the books and loans through the API
-- **Then** it shows the planned actions (which book to reserve, which loans to renew) and performs **nothing** until the member confirms
-- **And** every action runs with the member's own permissions, so a renewal the rules forbid is refused and explained
+**Zgodba 11 — AI agent**
+- **Če** prijavljeni član vpraša: »Poišči mi razpoložljivo knjigo o podatkovnih bazah, jo rezerviraj in podaljšaj moje trenutne izposoje«,
+- **ko** agent prek API-ja poišče knjige in izposoje,
+- **potem** prikaže načrtovana dejanja (katero knjigo bo rezerviral, katere izposoje bo podaljšal) in **ne izvede ničesar**, dokler član ne potrdi.
+- Vsa dejanja se izvajajo s članovimi lastnimi pravicami, zato podaljšanje, ki ga pravila ne dovoljujejo, zavrne in pojasni.
 
-## Mobile app use case
-The phone is used **at the shelf and on the go**:
+## Uporaba mobilne aplikacije
+Telefon se uporablja **pred knjižno polico in na poti**:
 
-- **Scan an ISBN barcode** with the camera to instantly see availability, the shelf location and the reservation queue, and to reserve the book with one tap.
-- **"My loans"** on the go: due dates, one-tap renewals and the status of reservations.
-- **Notifications** (could-have) when a reserved book is ready for pickup or a loan is about to expire.
+- **Skeniranje črtne kode ISBN** s kamero: takoj prikaže razpoložljivost, lokacijo na polici in čakalno vrsto, knjigo pa je mogoče rezervirati z enim dotikom.
+- **»Moje izposoje«** na poti: roki vračila, podaljšanje z enim dotikom in stanje rezervacij.
+- **Obvestila** (zaželeno): ko je rezervirana knjiga pripravljena za prevzem ali ko se izteka rok izposoje.
 
-These things only make sense on a phone: you're standing in front of the shelf or away from your computer when a book is due.
+To je smiselno ravno na telefonu: uporabnik stoji pred polico ali pa ni za računalnikom, ko se izteka rok vračila.
 
-## AI features
-- **LLM feature: natural-language catalog search.** The member types a free-text request ("an easy intro to machine learning in Slovenian"). The LLM turns it into a structured filter (topic/genre, keywords, language, level) that runs against our search endpoint. Results are ranked and get a one-line "why this book" explanation.
-- **Agent task:** *"Find an available book on a topic I describe, reserve it, and renew my loans that are about to expire — after I confirm."* The agent uses our API (search catalog → check availability → list my loans → reserve → renew). Write actions require explicit confirmation from the user, enforced in code, and every call uses the member's own token.
+## AI funkcionalnosti
+- **Funkcionalnost z LLM: iskanje po katalogu v naravnem jeziku.** Član vpiše prosto besedilo (»lahek uvod v strojno učenje v slovenščini«). LLM ga pretvori v strukturiran filter (tema/žanr, ključne besede, jezik, zahtevnost), ki se izvede na našem iskalnem endpointu. Rezultati so razvrščeni, vsak pa ima enovrstično razlago, zakaj ustreza iskanju.
+- **Naloga agenta:** *»Poišči razpoložljivo knjigo na temo, ki jo opišem, jo rezerviraj in podaljšaj moje izposoje, ki se jim izteka rok — po moji potrditvi.«* Agent uporablja naš API (iskanje po katalogu → preverjanje razpoložljivosti → seznam mojih izposoj → rezervacija → podaljšanje). Dejanja, ki spreminjajo podatke, zahtevajo izrecno potrditev uporabnika, kar je uveljavljeno v kodi, vsak klic pa se izvede z žetonom prijavljenega člana.
