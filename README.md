@@ -1,13 +1,13 @@
-# Project name
+# Shelfie
 
-> One-sentence description of what your system does and for whom.
+> Informacijski sistem za manjše knjižnice v študentskih domovih, društvih in klubih: člani prek spleta ali telefona iščejo po katalogu ter si izposojajo, rezervirajo in podaljšujejo knjige, skrbniki pa vodijo zbirko in izposojo.
 
 ## Authors
 
 | Name | GitHub | Main responsibilities |
 |------|--------|-----------------------|
-| TODO-AUTHOR | @… | … |
-| TODO-AUTHOR | @… | … |
+| Simon Jerina | @simonjerina | Frontend, Testing, Ai integracija |
+| Matej Suhadolc | @JRsuhi | Backend, Podatkovna baza, Frontend |
 
 <!-- Lab repository: one row. Project repository: both team members. -->
 
